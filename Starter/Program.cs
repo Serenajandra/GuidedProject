@@ -59,41 +59,102 @@ int currentAssignments = 5;
 // Creo le matrici con i voti dei singoli studenti
 int[] SophiaScores = new int[] { 90, 86, 87, 98, 100 };
 int[] AndrewScores = new int[] { 92, 89, 81, 96, 90 };
-int[] EmmasScores = new int[] { 90, 85, 87, 98, 68 };
+int[] EmmaScores = new int[] { 90, 85, 87, 98, 68 };
 int[] LoganScores = new int[] { 90, 95, 87, 88, 96 };
 
-int sophiaSum = 0;
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// int sophiaSum = 0;
 // decimal sophiaScore;
 
-foreach (int item in SophiaScores)
-{
-    sophiaSum += item;
-}
+// foreach (int item in SophiaScores)
+// {
+//     sophiaSum += item;
+// }
 
-decimal media = (decimal)sophiaSum / currentAssignments;
+// decimal media = (decimal)sophiaSum / currentAssignments;
 
-string vote = "";
+// string vote = "";
 
-if (media > 90)
-{
-    vote = "A";
-}
-else if (media > 70 && media <= 90)
-{
-    vote = "B";
-}
-else if (media > 60 && media <= 70)
-{
-    vote = "C";
-}
-else
-{
-    vote = "D";
-}
+// if (media > 90)
+// {
+//     vote = "A";
+// }
+// else if (media > 70 && media <= 90)
+// {
+//     vote = "B";
+// }
+// else if (media > 60 && media <= 70)
+// {
+//     vote = "C";
+// }
+// else
+// {
+//     vote = "D";
+// }
 
-Console.WriteLine($"{sophiaSum}");
+// Console.WriteLine($"{sophiaSum}");
+// Console.WriteLine($"{(decimal)sophiaSum / currentAssignments}");
+// Console.WriteLine("name \t\tTotal \t\tScore \t\tVote\n");
+// Console.WriteLine($"Sophia \t\t{sophiaSum} \t\t{(decimal)sophiaSum / currentAssignments} \t\t{vote}");
+// Console.ReadLine();
 
-Console.WriteLine($"{(decimal)sophiaSum / currentAssignments}");
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// Creare una matrice di nomi degli studenti e un ciclo foreach esterno:
+string[] studentsNames = new string[] { "Sophia", "Andrew", "Emma", "Logan" };
+
+int[] studentScores = new int[10];
+// Write the Report Header to the console
 Console.WriteLine("name \t\tTotal \t\tScore \t\tVote\n");
-Console.WriteLine($"Sophia \t\t{sophiaSum} \t\t{(decimal)sophiaSum / currentAssignments} \t\t{vote}");
+
+foreach (string currentStudent in studentsNames)
+{
+    // string currentStudent = student;
+
+    if (currentStudent == "Sophia")
+        studentScores = SophiaScores;
+    else if (currentStudent == "Andrew")
+        studentScores = AndrewScores;
+    else if (currentStudent == "Emma")
+        studentScores = EmmaScores;
+    else if (currentStudent == "Logan")
+        studentScores = LoganScores;
+
+    // initialize/reset the sum of scored assignments
+    int scoresSum = 0;
+
+    // initialize the media student vote
+    decimal mediaStudentScore = 0;
+
+
+    foreach (int singleScore in studentScores)
+    {
+        scoresSum += singleScore;
+    }
+
+    mediaStudentScore = (decimal)scoresSum / currentAssignments;
+    // Console.WriteLine();
+
+    string studentVote = "";
+
+    if (mediaStudentScore > 90)
+    {
+        studentVote = "A";
+    }
+    else if (mediaStudentScore > 70 && mediaStudentScore <= 90)
+    {
+        studentVote = "B";
+    }
+    else if (mediaStudentScore > 60 && mediaStudentScore <= 70)
+    {
+        studentVote = "C";
+    }
+    else
+    {
+        studentVote = "D";
+    }
+    // Console.WriteLine($"{mediaStudentScore}");
+    Console.WriteLine($"{currentStudent} \t\t{scoresSum} \t\t{mediaStudentScore} \t\t{studentVote}");
+}
+
