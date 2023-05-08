@@ -101,10 +101,12 @@ int[] LoganScores = new int[] { 90, 95, 87, 88, 96 };
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// Creare una matrice di nomi degli studenti e un ciclo foreach esterno:
+// Creare una matrice di nomi degli studenti:
 string[] studentsNames = new string[] { "Sophia", "Andrew", "Emma", "Logan" };
 
+// Creo una nuova matrice che raccoglie i punteggi dello studente corrente del foreach
 int[] studentScores = new int[10];
+
 // Write the Report Header to the console
 Console.WriteLine("name \t\tTotal \t\tScore \t\tVote\n");
 
@@ -134,7 +136,8 @@ foreach (string currentStudent in studentsNames)
     }
 
     mediaStudentScore = (decimal)scoresSum / currentAssignments;
-    // Console.WriteLine();
+
+
 
     string studentVote = "";
 
