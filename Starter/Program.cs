@@ -70,9 +70,30 @@ foreach (int item in SophiaScores)
     sophiaSum += item;
 }
 
+decimal media = (decimal)sophiaSum / currentAssignments;
+
+string vote = "";
+
+if (media > 90)
+{
+    vote = "A";
+}
+else if (media > 70 && media <= 90)
+{
+    vote = "B";
+}
+else if (media > 60 && media <= 70)
+{
+    vote = "C";
+}
+else
+{
+    vote = "D";
+}
+
 Console.WriteLine($"{sophiaSum}");
 
 Console.WriteLine($"{(decimal)sophiaSum / currentAssignments}");
 
 Console.WriteLine("name \t\tTotal \t\tScore \t\tVote\n");
-Console.WriteLine($"Sophia \t\t{sophiaSum} \t\t{(decimal)sophiaSum / currentAssignments} \t\tA+");
+Console.WriteLine($"Sophia \t\t{sophiaSum} \t\t{(decimal)sophiaSum / currentAssignments} \t\t{vote}");
